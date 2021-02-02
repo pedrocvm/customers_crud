@@ -1,0 +1,90 @@
+.formContainer {
+  width: 100%;
+  @include flexbox(column, center, center);
+
+  .formHeader {
+    width: 100%;
+    margin-bottom: 20px;
+    @include flexbox(row, center, center);
+
+    .formTitle {
+      color: $lightgrey;
+      font-size: 26px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      text-shadow: 0 0 3px #fff;
+    }
+
+    .backToHome {
+      position: absolute;
+      left: 10px;
+    }
+  }
+
+  form {
+    padding: 30px 50px;
+    width: 75%;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    background: rgba(255, 255, 255, 0.05);
+    box-shadow: 0 8px 20px 0 rgba(255, 255, 255, 0.37);
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(6px);
+    border-radius: 10px;
+    flex-wrap: wrap;
+    @include flexbox(column, center, center);
+
+    .formGroup {
+      @include flexbox(row, center, space-between);
+      width: 100%;
+      flex-wrap: wrap;
+    }
+    .addressData,
+    .contactData {
+      width: 100%;
+      flex-wrap: wrap;
+      @include flexbox(row, center, space-between);
+
+      .smallInput {
+        max-width: 15%;
+      }
+    }
+
+    .v-input {
+      width: calc(40% - 50px);
+      margin: 0 20px;
+    }
+  }
+
+  .actionWrapper {
+    width: 100%;
+
+    @include flexbox(row, center, space-between);
+
+    .dialogComponent {
+      margin-left: 22px;
+      justify-content: flex-start !important;
+    }
+    .buttonWrapper {
+      margin-right: 12px;
+      @include flexbox(row, center, flex-end);
+    }
+  }
+}
+
+.v-btn--disabled {
+  border: 1px solid rgba(128, 128, 128, 0.26);
+
+  .v-btn__content {
+    color: rgb(105, 105, 105);
+  }
+}
+
+
+@media (min-width: 1500px) {
+  .formTitle{
+    margin: 15px 0px;
+  }
+  form {
+    padding: 50px !important;
+  }
+}

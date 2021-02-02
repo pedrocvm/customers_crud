@@ -1,0 +1,52 @@
+td {
+  cursor: pointer;
+  transition: all 0.3s !important;
+}
+
+.v-data-table {
+  max-height: 300px;
+  background: rgba(255, 255, 255, 0) !important;
+  box-shadow: 0 3px 15px 0 rgba(255, 255, 255, 0.37) !important;
+  backdrop-filter: blur(6px) !important;
+  -webkit-backdrop-filter: blur(6px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.18) !important;
+}
+
+.v-data-table__wrapper {
+  max-height: 300px;
+  overflow: auto;
+  background: rgba(255, 255, 255, 0) !important;
+  backdrop-filter: blur(6px) !important;
+  -webkit-backdrop-filter: blur(6px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.18) !important;
+}
+
+.v-menu__content {
+  .actionItem {
+    padding: 0 !important;
+    width: 100%;
+
+    .v-icon {
+      margin-right: 10px;
+      font-size: 20px !important;
+    }
+    .v-btn:not(.v-btn--round).v-size--default {
+      @include flexbox(row, center, flex-start);
+      padding: 0 10px !important;
+      width: 100%;
+    }
+  }
+  .v-btn__content {
+    font-size: 12px !important;
+  }
+}
+
+.actionContainer {
+  width: 100%;
+  @include flexbox(row, center, space-between);
+  margin-bottom: 30px;
+}
+
+.searchInput {
+  max-width: 300px !important;
+}

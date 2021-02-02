@@ -1,0 +1,366 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "API developed for Triyo's Challenge",
+    "version": "1.0.0",
+    "title": "Triyo's Challenge API"
+  },
+  "host": "localhost:3341",
+  "tags": [
+    {
+      "name": "Customers"
+    },
+    {
+      "name": "Dependents"
+    }
+  ],
+  "paths": {
+    "/customer": {
+      "get": {
+        "tags": ["Customers"],
+        "summary": "Get all Customers",
+        "description": "Get all Customers registered in database",
+        "produces": ["application/json"],
+        "responses": {
+          "200": {
+            "description": "Successful Operation",
+            "schema": {
+              "type": "array",
+              "default": []
+            }
+          },
+          "400": {
+            "description": "Error Occurred"
+          }
+        }
+      },
+      "post": {
+        "tags": ["Customers"],
+        "summary": "Create a new Customer",
+        "description": "Create a new Customer with the received parameters",
+        "consumes": ["application/json"],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Customer object",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/NewCustomer"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Customer Created"
+          },
+          "400": {
+            "description": "Error Occurred"
+          }
+        }
+      }
+    },
+    "/customer/{id}": {
+      "get": {
+        "tags": ["Customers"],
+        "summary": "Get an existing Customer",
+        "description": "Get an existing Customer with the received parameters",
+        "consumes": ["application/json"],
+        "parameters": [
+          {
+            "in": "path",
+            "type": "string",
+            "name": "id",
+            "description": "Customer ID",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Operation"
+          },
+          "400": {
+            "description": "Error Occurred"
+          }
+        }
+      },
+      "patch": {
+        "tags": ["Customers"],
+        "summary": "Update an existing Customer",
+        "description": "Update an existing Customer with the received parameters",
+        "consumes": ["application/json"],
+        "parameters": [
+          {
+            "in": "path",
+            "type": "string",
+            "name": "id",
+            "description": "Customer ID",
+            "required": true
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Customer object",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/NewCustomer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Customer Updated"
+          },
+          "400": {
+            "description": "Error Occurred"
+          }
+        }
+      },
+      "delete": {
+        "tags": ["Customers"],
+        "summary": "Delete an existing Customer",
+        "description": "Delete an existing Customer with the received parameters",
+        "consumes": ["application/json"],
+        "parameters": [
+          {
+            "in": "path",
+            "type": "string",
+            "name": "id",
+            "description": "Customer ID",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Customer Deleted"
+          },
+          "400": {
+            "description": "Error Occurred"
+          }
+        }
+      }
+    },
+    "/dependent": {
+      "get": {
+        "tags": ["Dependents"],
+        "summary": "Get all the Dependents",
+        "description": "Get all Dependents regardless Customer ID",
+        "consumes": ["application/json"],
+        "responses": {
+          "200": {
+            "description": "Successful Operation"
+          },
+          "400": {
+            "description": "Error Occurred"
+          }
+        }
+      }
+    },
+    "/dependent/{customerID}": {
+      "get": {
+        "tags": ["Dependents"],
+        "summary": "Get all Dependents belonging to a Customer",
+        "description": "Get all Dependents belonging to a Customer with the received parameters",
+        "consumes": ["application/json"],
+        "parameters": [
+          {
+            "in": "path",
+            "type": "string",
+            "name": "customerID",
+            "description": "Customer ID",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Operation"
+          },
+          "400": {
+            "description": "Error Occurred"
+          }
+        }
+      },
+      "post": {
+        "tags": ["Dependents"],
+        "summary": "Create a new Dependent",
+        "description": "Create a new Dependent attached a Customer with the received parameters",
+        "consumes": ["application/json"],
+        "parameters": [
+          {
+            "in": "path",
+            "type": "string",
+            "name": "customerID",
+            "description": "Customer ID",
+            "required": true
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Dependent object",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/NewDependent"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Dependent Created"
+          },
+          "400": {
+            "description": "Error Occurred"
+          }
+        }
+      }
+    },
+    "/dependent/{customerID}/{id}": {
+      "patch": {
+        "tags": ["Dependents"],
+        "summary": "Update an existing Dependent",
+        "description": "Update an existing Dependent with the received parameters",
+        "consumes": ["application/json"],
+        "parameters": [
+          {
+            "in": "path",
+            "type": "string",
+            "name": "customerID",
+            "description": "Customer ID",
+            "required": true
+          },
+          {
+            "in": "path",
+            "type": "string",
+            "name": "id",
+            "description": "Dependent ID",
+            "required": true
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Dependent object",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/NewDependent"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Dependent Updated"
+          },
+          "400": {
+            "description": "Error Occurred"
+          }
+        }
+      },
+      "delete": {
+        "tags": ["Dependents"],
+        "summary": "Delete an existing Dependent",
+        "description": "Delete an existing Dependent with the received parameters",
+        "consumes": ["application/json"],
+        "parameters": [
+          {
+            "in": "path",
+            "type": "string",
+            "name": "customerID",
+            "description": "Customer ID",
+            "required": true
+          },
+          {
+            "in": "path",
+            "type": "string",
+            "name": "id",
+            "description": "Dependent ID",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Dependent Deleted"
+          },
+          "400": {
+            "description": "Error Occurred"
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "NewCustomer": {
+      "type": "string",
+      "properties": {
+        "name": {
+          "type": "string",
+          "example": "teste da silva"
+        },
+        "cpf": {
+          "type": "string",
+          "example": "12312312312"
+        },
+        "address": {
+          "type": "object",
+          "properties": {
+            "cep": {
+              "type": "string",
+              "example": "00000000"
+            },
+            "publicPlace": {
+              "type": "string",
+              "example": "av. teste"
+            },
+            "number": {
+              "type": "string",
+              "example": "000"
+            },
+            "district": {
+              "type": "string",
+              "example": "teste"
+            },
+            "city": {
+              "type": "string",
+              "example": "teste"
+            },
+            "state": {
+              "type": "string",
+              "example": "teste"
+            }
+          }
+        },
+        "contact": {
+          "type": "object",
+          "properties": {
+            "phone": {
+              "type": "string",
+              "example": "0000000000"
+            },
+            "email": {
+              "type": "string",
+              "example": "test@test.com"
+            }
+          }
+        }
+      }
+    },
+    "NewDependent": {
+      "type": "string",
+      "properties": {
+        "name": {
+          "type": "string",
+          "example": "Dependente Teste da Silva"
+        },
+        "cpf": {
+          "type": "string",
+          "example": "32132132131"
+        },
+        "age": {
+          "type": "number",
+          "example": 12
+        },
+        "type": {
+          "type": "string",
+          "example": "daughter"
+        }
+      }
+    }
+  }
+}

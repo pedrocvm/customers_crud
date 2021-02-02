@@ -1,0 +1,8 @@
+{
+  "app": {
+    "port": "3341",
+    "database": {
+      "mongoUrl": "mongodb+srv://admin:admin@sosdb.zoizg.mongodb.net/triyo_dev?retryWrites=true&w=majority"
+    }
+  }
+}

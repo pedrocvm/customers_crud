@@ -1,0 +1,16 @@
+.dialogHeader {
+  backdrop-filter: blur(3px) !important;
+  background: rgba(255, 255, 255, 0.05) !important;
+  -webkit-backdrop-filter: blur(3px) !important;
+  box-shadow: 0 1px 10px -1px rgba(255, 255, 255, 0.37) !important;
+}
+
+.dialogContentWrapper {
+  margin: 30px 70px;
+}
+
+.searchContainer {
+  width: 100%;
+  padding: 30px 70px;
+  @include flexbox(row, center, space-between);
+}
