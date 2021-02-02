@@ -29,6 +29,8 @@
     </div>
     <v-data-table
       dark
+      max-height="300"
+      fixed-header
       :headers="headers"
       :items="items"
       :search="search"
