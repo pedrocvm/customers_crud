@@ -122,7 +122,8 @@ $ yarn dev:test
 $ yarn test
 ```
 
-> ⚠️ O servidor iniciará automaticamente na Porta 8080, caso não inicialize, acesse http://localhost:8080
+<p>⚠️ O servidor iniciará automaticamente na Porta 8080, caso não inicialize, acesse <a href="http://localhost:8080">http://localhost:8080</a>.</p>
+<p>⚠️ A documentação da API poderá ser consultada em <a href="http://localhost:3341/doc">http://localhost:3341/doc</a>.</p>
 
 ---
 ### :hammer: **Tecnologias**
