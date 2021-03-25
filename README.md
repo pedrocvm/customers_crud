@@ -1,8 +1,4 @@
 <p align="center">
-	<img alt="Triyo " style='width:80%' src="https://i.imgur.com/V1K41j1.png">
-</p>
-
-<p align="center">
   <a href="https://github.com/pedrocvm">
     <img align="center" alt="Feito por Pedro Matos" src="https://img.shields.io/badge/feito%20por Pedro Matos-%237519C1?style=for-the-badge">
   </a>
@@ -65,7 +61,7 @@ A Aplicação consiste em um CRUD de Clientes, que devem ser cadastrados com as 
   - Idade,
   - Parentesco
 
-Projeto desenvolvido para o Processo Seletivo da [TRIYO TECNOLOGIA](https://triyo.com.br/) e foi iniciado em 30/01/2021.
+Projeto iniciado em 30/01/2021.
 Foram exercitados tópicos como Múltiplos Ambientes (Produção, Desenvolvimento e Testes), Testes Unitários (Mocha/Chai), Glassmorphism e Vue-Particles.
 
 Foi utilizado como apoio a API do ViaCEP para o preenchimento do endereço automaticamente após ser digitado o CEP.
